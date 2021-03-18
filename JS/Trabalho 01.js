@@ -3,8 +3,8 @@ var camera; //area de visualização
 var renderer; //responsavel por renderizar tudo
 
 var elementos = [];
-var velocidadex = 1;
-var velocidadey = 1;
+var velocidadex = 0.2;
+var velocidadey = 0.2;
 var velocidadeDx = 0.5;
 var velocidadeDy = 0.5;
 
@@ -60,7 +60,7 @@ var animation = function (){
 	
     elementos["dodecahedro"].position.x-=velocidadex;
 	elementos["dodecahedro"].position.y-=velocidadey;
-	if (elementos["dodecahedro"].position.x < -20){
+	if (elementos["dodecahedro"].position.x < -19){
 		velocidadex *=-1;
 	}else if(elementos["dodecahedro"].position.x > 20){
 		velocidadex *=-1;
@@ -68,21 +68,21 @@ var animation = function (){
 	if(elementos["dodecahedro"].position.y < -15){
 		velocidadey *=-1;
 		
-	}else if(elementos["dodecahedro"].position.y > 19){
+	}else if(elementos["dodecahedro"].position.y > 18){
 		velocidadey *=-1;
 	}
 
-	if (elementos["dodecahedro"].position.x < -22){
+	if (elementos["dodecahedro"].position.x < -21){
 		elementos["dodecahedro"].position.x = -3;
 		elementos["dodecahedro"].position.y = -0;
-	}else if(elementos["dodecahedro"].position.y < -22){
+	}else if(elementos["dodecahedro"].position.y < -21){
 		elementos["dodecahedro"].position.x = -3;
 		elementos["dodecahedro"].position.y = -0;
 	}
-	if (elementos["dodecahedro"].position.x > 22){
+	if (elementos["dodecahedro"].position.x > 21){
 		elementos["dodecahedro"].position.x = -3;
 		elementos["dodecahedro"].position.y = -0;
-	}else if(elementos["dodecahedro"].position.y > 22){
+	}else if(elementos["dodecahedro"].position.y > 21){
 		elementos["dodecahedro"].position.x = -3;
 		elementos["dodecahedro"].position.y = -0;
 	}
@@ -92,7 +92,7 @@ var animation = function (){
 	
     elementos["Octahedro"].position.x+=velocidadeDx;
 	elementos["Octahedro"].position.y+=velocidadeDy;
-	if (elementos["Octahedro"].position.x < -20){
+	if (elementos["Octahedro"].position.x < -19){
 		velocidadeDx *=-1;
 	}else if(elementos["Octahedro"].position.x > 20){
 		velocidadeDx *=-1;
@@ -100,21 +100,21 @@ var animation = function (){
 	if(elementos["Octahedro"].position.y < -15){
 		velocidadeDy *=-1;
 		
-	}else if(elementos["Octahedro"].position.y > 19){
+	}else if(elementos["Octahedro"].position.y > 18){
 		velocidadeDy *=-1;
 	}
 
-	if (elementos["Octahedro"].position.x < -22){
+	if (elementos["Octahedro"].position.x < -21){
 		elementos["Octahedro"].position.x = -3;
 		elementos["Octahedro"].position.y = -0;
-	}else if(elementos["Octahedro"].position.y < -22){
+	}else if(elementos["Octahedro"].position.y < -21){
 		elementos["Octahedro"].position.x = -3;
 		elementos["Octahedro"].position.y = -0;
 	}
-	if (elementos["Octahedro"].position.x > 22){
+	if (elementos["Octahedro"].position.x > 21){
 		elementos["Octahedro"].position.x = -3;
 		elementos["Octahedro"].position.y = -0;
-	}else if(elementos["Octahedro"].position.y > 22){
+	}else if(elementos["Octahedro"].position.y > 21){
 		elementos["Octahedro"].position.x = -3;
 		elementos["Octahedro"].position.y = -0;
 	}
