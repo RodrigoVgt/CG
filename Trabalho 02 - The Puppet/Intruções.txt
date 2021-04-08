@@ -1,0 +1,43 @@
+Para a movimentação do Boneco, seguir as seguintes intruções:
+
+
+
+Ligação do Ombro Esquerdo:
+
+1, 3 = Rotação Vertical
+2, 4 = Rotação Horizontal
+
+Ligação do Cotovelo Esquerdo:
+
+5, 7 = Rotação Vertical
+6, 8 = Rotação Horizontal
+
+Ligação do Ombro Direito:
+
+q, e = Rotação Vertical
+w, r = Rotação Horizontal
+
+Ligação do Cotovelo direito:
+
+t, u = Rotação Vertical
+y, i = Rotação Horizontal
+
+Ligação da perna esquerda:
+
+a, d = Rotação Vertical
+s, f = Rotação Horizontal
+
+Ligação da coxa esquerda:
+
+g, j = Rotação Vertical
+h, k = Rotação Horizontal
+
+Ligação da perna direita:
+
+z, c = Rotação Vertical
+x, v = Rotação Horizontal
+
+Ligação da coxa direita:
+
+b, m = Rotação Vertical
+n, p = Rotação Horizontal
