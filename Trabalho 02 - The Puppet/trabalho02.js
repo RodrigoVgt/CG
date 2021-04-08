@@ -761,16 +761,6 @@ var animation = function (){
 	if (key_space){
 		elementos["puppet"]["tronco"].rotation.y += 0.01;
 	}
-	
-	//if (++count >= 30){
-	//	let rotation = new THREE.Quaternion().setFromEuler(new THREE.Euler(0.01,0,0.01, 'XYZ'));
-	//	elementos["cubo1"].quaternion.multiplyQuaternions(rotation, elementos["cubo1"].quaternion);
-
-	// 	elementos["cubo2"].rotation.x += 0.01;
-	// 	elementos["cubo2"].rotation.z += 0.01;
-	// //	count = 0;
-	
-
 
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
