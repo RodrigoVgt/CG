@@ -284,14 +284,26 @@ var key_q = false;
 var key_w = false;
 var key_e = false;
 var key_r = false;
+var key_t = false;
+var key_y = false;
+var key_u = false;
+var key_i = false;
 var key_a = false;
 var key_s = false;
 var key_d = false;
 var key_f = false;
+var key_g = false;
+var key_h = false;
+var key_j = false;
+var key_k = false;
 var key_z = false;
 var key_x = false;
 var key_c = false;
 var key_v = false;
+var key_b = false;
+var key_n = false;
+var key_m = false;
+var key_p = false;
 var key_space = false;
 
 var soltouBotao = function(e){
@@ -335,6 +347,18 @@ var soltouBotao = function(e){
     if (e.keyCode == 82){ // r
 		key_r = false;
 	}
+    if (e.keyCode == 84){ // t
+		key_t = false;
+	}
+    if (e.keyCode == 89){ // y
+		key_y = false;
+	}
+    if (e.keyCode == 85){ // u
+		key_u = false;
+	}
+    if (e.keyCode == 73){ // i
+		key_i = false;
+	}
     if (e.keyCode == 65){ // a
 		key_a = false;
 	}
@@ -347,6 +371,18 @@ var soltouBotao = function(e){
     if (e.keyCode == 70){ // f
 		key_f = false;
 	}
+    if (e.keyCode == 71){ // g
+		key_g = false;
+	}
+    if (e.keyCode == 72){ // h
+		key_h = false;
+	}
+    if (e.keyCode == 74){ // j
+		key_j = false;
+	}
+    if (e.keyCode == 75){ // k
+		key_k = false;
+	}
     if (e.keyCode == 90){ // z
 		key_z = false;
 	}
@@ -358,6 +394,18 @@ var soltouBotao = function(e){
 	}
     if (e.keyCode == 86){ // v
 		key_v = false;
+	}
+    if (e.keyCode == 66){ // b
+		key_b = false;
+	}
+    if (e.keyCode == 78){ // n
+		key_n = false;
+	}
+    if (e.keyCode == 77){ // m
+		key_m = false;
+	}
+    if (e.keyCode == 80){ // p
+		key_p = false;
 	}
 }
 
@@ -404,17 +452,17 @@ var apertouButao =  function(e){
     if (e.keyCode == 82){ // r
 		key_r = true;
 	}
-    if (e.keyCode == 81){ // i
-		key_q = true;
+    if (e.keyCode == 84){ // t
+		key_t = true;
 	}
-    if (e.keyCode == 87){ // u
-		key_w = true;
+    if (e.keyCode == 89){ // y
+		key_y = true;
 	}
-    if (e.keyCode == 69){ // y
-		key_e = true;
+    if (e.keyCode == 85){ // u
+		key_u = true;
 	}
-    if (e.keyCode == 82){ // t
-		key_r = true;
+    if (e.keyCode == 73){ // i
+		key_i = true;
 	}
     if (e.keyCode == 65){ // a
 		key_a = true;
@@ -428,6 +476,18 @@ var apertouButao =  function(e){
     if (e.keyCode == 70){ // f
 		key_f = true;
 	}
+    if (e.keyCode == 71){ // g
+		key_g = true;
+	}
+    if (e.keyCode == 72){ // h
+		key_h = true;
+	}
+    if (e.keyCode == 74){ // j
+		key_j = true;
+	}
+    if (e.keyCode == 75){ // k
+		key_k = true;
+	}
     if (e.keyCode == 90){ // z
 		key_z = true;
 	}
@@ -440,6 +500,18 @@ var apertouButao =  function(e){
     if (e.keyCode == 86){ // v
 		key_v = true;
 	}
+    if (e.keyCode == 66){ // b
+		key_b = true;
+	}
+    if (e.keyCode == 78){ // n
+		key_n = true;
+	}
+    if (e.keyCode == 77){ // m
+		key_m = true;
+	}
+    if (e.keyCode == 80){ // p
+		key_p = true;
+	}
 }
 
 var count =0; 
@@ -449,6 +521,16 @@ var velocidadeOmbroEsquerdoC = -0.03;
 var velocidadeOmbroEsquerdoL = -0.03;
 var velocidadeCotoDireitoC = -0.03;
 var velocidadeCotoDireitoL = -0.03;
+var velocidadeCotoEsquerdoC = -0.03;
+var velocidadeCotoEsquerdoL = -0.03;
+var velocidadeCoxaDireitoC = -0.03;
+var velocidadeCoxaDireitoL = -0.03;
+var velocidadeCoxaEsquerdoC = -0.03;
+var velocidadeCoxaEsquerdoL = -0.03;
+var velocidadePantDireitoC = -0.03;
+var velocidadePantDireitoL = -0.03;
+var velocidadePantEsquerdoC = -0.03;
+var velocidadePantEsquerdoL = -0.03;
 var animation = function (){
 	requestAnimationFrame(animation); //adiciona o mÃ©todo na fila de renderizaÃ§Ã£o
 
@@ -537,31 +619,144 @@ var animation = function (){
 
     ///////////////movimento atebraço direito
 
-	if (key_t){ 
-		if (elementos["puppet"]["pivotcotoD"].rotation.x < -2.83 || elementos["puppet"]["pivotcotoD"].rotation.x > 0)
-            velocidadeCotoDireitoC *=-1;
+    if (key_t){
+		if (elementos["puppet"]["pivotcotoE"].rotation.x < -2.83 || elementos["puppet"]["pivotcotoE"].rotation.x > 0)
+            velocidadeCotoEsquerdoC *=-1;
 
-		elementos["puppet"]["pivotcotoD"].rotation.x += velocidadeCotoDireitoC;
+		elementos["puppet"]["pivotcotoE"].rotation.x += velocidadeCotoEsquerdoC;
 	}
 	if (key_y){
-		if (elementos["puppet"]["pivotcotoD"].rotation.z < 0 || elementos["puppet"]["pivotcotoD"].rotation.z > 0.5)
-            velocidadeCotoDireitoL *=-1;
+		if (elementos["puppet"]["pivotcotoE"].rotation.z > 0 || elementos["puppet"]["pivotcotoE"].rotation.z < -0.5)
+            velocidadeCotoEsquerdoL *=-1;
 
-		elementos["puppet"]["pivotcotoD"].rotation.z += velocidadeCotoDireitoL *-1;;
+		elementos["puppet"]["pivotcotoE"].rotation.z += velocidadeCotoEsquerdoL;
 	}
     if (key_u){
-		if (elementos["puppet"]["pivotcotoD"].rotation.x < -2.83 || elementos["puppet"]["pivotcotoD"].rotation.x > 0)
-            velocidadeCotoDireitoC*=-1;
+		if (elementos["puppet"]["pivotcotoE"].rotation.x < -2.83 || elementos["puppet"]["pivotcotoE"].rotation.x > 0)
+            velocidadeCotoEsquerdoC *=-1;
 
-		elementos["puppet"]["pivotcotoD"].rotation.x += velocidadeCotoDireitoC*-1;
+		elementos["puppet"]["pivotcotoE"].rotation.x += velocidadeCotoEsquerdoC *-1;
 	}
-    if (key_i){
-		if (elementos["puppet"]["pivotcotoD"].rotation.z < 0 || elementos["puppet"]["pivotcotoD"].rotation.z > 0.5)
-            velocidadeCotoDireitoL*=-1;
+	if (key_i){
+		if (elementos["puppet"]["pivotcotoE"].rotation.z > 0 || elementos["puppet"]["pivotcotoE"].rotation.z < -0.5)
+            velocidadeCotoEsquerdoL *=-1;
 
-		elementos["puppet"]["pivotcotoD"].rotation.z += velocidadeCotoDireitoL *-1;
+		elementos["puppet"]["pivotcotoE"].rotation.z += velocidadeCotoEsquerdoL *-1;
 	}
     
+
+    ///////////////movimento coxa direita
+
+    if (key_a){
+		if (elementos["puppet"]["pivotquadrilE"].rotation.x < -2.5 || elementos["puppet"]["pivotquadrilE"].rotation.x > 0.7)
+            velocidadeCoxaEsquerdoC *=-1;
+
+		elementos["puppet"]["pivotquadrilE"].rotation.x += velocidadeCoxaEsquerdoC;
+	}
+	if (key_s){
+		if (elementos["puppet"]["pivotquadrilE"].rotation.z > 0 || elementos["puppet"]["pivotquadrilE"].rotation.z < -0.5)
+            velocidadeCoxaEsquerdoL *=-1;
+
+		elementos["puppet"]["pivotquadrilE"].rotation.z += velocidadeCoxaEsquerdoL;
+	}
+    if (key_d){
+		if (elementos["puppet"]["pivotquadrilE"].rotation.x < -2.5 || elementos["puppet"]["pivotquadrilE"].rotation.x > 0.7)
+            velocidadeCoxaEsquerdoC *=-1;
+
+		elementos["puppet"]["pivotquadrilE"].rotation.x += velocidadeCoxaEsquerdoC *-1;
+	}
+	if (key_f){
+		if (elementos["puppet"]["pivotquadrilE"].rotation.z > 0 || elementos["puppet"]["pivotquadrilE"].rotation.z < -0.5)
+            velocidadeCoxaEsquerdoL *=-1;
+
+		elementos["puppet"]["pivotquadrilE"].rotation.z += velocidadeCoxaEsquerdoL *-1;
+	}
+
+
+
+    /////////////// movimentação coxa esquerda
+
+
+
+    if (key_z){
+		if (elementos["puppet"]["pivotquadrilD"].rotation.x < -2.5 || elementos["puppet"]["pivotquadrilD"].rotation.x > 0.7)
+            velocidadeCotoDireitoC *=-1;
+
+		elementos["puppet"]["pivotquadrilD"].rotation.x += velocidadeCotoDireitoC;
+	}
+	if (key_x){
+		if (elementos["puppet"]["pivotquadrilD"].rotation.z < 0 || elementos["puppet"]["pivotquadrilD"].rotation.z > 0.5)
+            velocidadeCotoDireitoL *=-1;
+
+		elementos["puppet"]["pivotquadrilD"].rotation.z += velocidadeCotoDireitoL;
+	}
+    if (key_c){
+		if (elementos["puppet"]["pivotquadrilD"].rotation.x < -2.5 || elementos["puppet"]["pivotquadrilD"].rotation.x > 0.7)
+            velocidadeCotoDireitoC *=-1;
+
+		elementos["puppet"]["pivotquadrilD"].rotation.x += velocidadeCotoDireitoC *-1;
+	}
+	if (key_v){
+		if (elementos["puppet"]["pivotquadrilD"].rotation.z < 0 || elementos["puppet"]["pivotquadrilD"].rotation.z > 0.5)
+            velocidadeCotoDireitoL *=-1;
+
+		elementos["puppet"]["pivotquadrilD"].rotation.z += velocidadeCotoDireitoL *-1;
+	}
+
+    //////////////////// Movimentação joelho direito
+
+	if (key_g){ 
+		if (elementos["puppet"]["pivotjoelhoD"].rotation.x < 0 || elementos["puppet"]["pivotjoelhoD"].rotation.x > 2.5)
+            velocidadePantDireitoC *=-1;
+
+		elementos["puppet"]["pivotjoelhoD"].rotation.x += velocidadePantDireitoC;
+	}
+	if (key_h){
+		if (elementos["puppet"]["pivotjoelhoD"].rotation.z < -0.3 || elementos["puppet"]["pivotjoelhoD"].rotation.z > 0.3)
+            velocidadePantDireitoL *=-1;
+
+		elementos["puppet"]["pivotjoelhoD"].rotation.z += velocidadePantDireitoL *-1;;
+	}
+    if (key_j){
+		if (elementos["puppet"]["pivotjoelhoD"].rotation.x < 0 || elementos["puppet"]["pivotjoelhoD"].rotation.x > 2.5)
+            velocidadePantDireitoC *=-1;
+
+		elementos["puppet"]["pivotjoelhoD"].rotation.x += velocidadePantDireitoC*-1;
+	}
+    if (key_k){
+		if (elementos["puppet"]["pivotjoelhoD"].rotation.z < -0.3 || elementos["puppet"]["pivotjoelhoD"].rotation.z > 0.3)
+            velocidadePantDireitoL*=-1;
+
+		elementos["puppet"]["pivotjoelhoD"].rotation.z += velocidadePantDireitoL *-1;
+	}
+
+    //////////////////// Movimentação joelho Esquerdo
+
+	if (key_b){ 
+		if (elementos["puppet"]["pivotjoelhoE"].rotation.x < 0 || elementos["puppet"]["pivotjoelhoE"].rotation.x > 2.5)
+            velocidadePantEsquerdoC *=-1;
+
+		elementos["puppet"]["pivotjoelhoE"].rotation.x += velocidadePantEsquerdoC;
+	}
+	if (key_n){
+		if (elementos["puppet"]["pivotjoelhoE"].rotation.z < -0.3 || elementos["puppet"]["pivotjoelhoE"].rotation.z > 0.3)
+            velocidadePantEsquerdoL *=-1;
+
+		elementos["puppet"]["pivotjoelhoE"].rotation.z += velocidadePantEsquerdoL *-1;;
+	}
+    if (key_m){
+		if (elementos["puppet"]["pivotjoelhoE"].rotation.x < 0 || elementos["puppet"]["pivotjoelhoE"].rotation.x > 2.5)
+            velocidadePantEsquerdoC *=-1;
+
+		elementos["puppet"]["pivotjoelhoE"].rotation.x += velocidadePantEsquerdoC*-1;
+	}
+    if (key_p){
+		if (elementos["puppet"]["pivotjoelhoE"].rotation.z < -0.3 || elementos["puppet"]["pivotjoelhoE"].rotation.z > 0.3)
+            velocidadePantEsquerdoL*=-1;
+
+		elementos["puppet"]["pivotjoelhoE"].rotation.z += velocidadePantEsquerdoL *-1;
+	}
+
     ///////////////rotação boneco
 	if (key_space){
 		elementos["puppet"]["tronco"].rotation.y += 0.01;
