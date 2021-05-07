@@ -578,12 +578,6 @@ var init = function (){
 						1, //near
 						500 //far
 					);
-
-	
-
-	// geometriaA = new THREE.Mesh(new THREE.BoxGeometry(4, 4, 4), new THREE.MeshBasicMaterial({ color: 0xff0000}));
-	// geometriaA.position.x = -8;
-	// scene.add(geometriaA);
 	
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -596,8 +590,6 @@ var init = function (){
 	godSaysLightsOn();
 
 	createGui();
-
-	//criaMonstro();	
 
 	objLoading();
 
@@ -627,8 +619,31 @@ var init = function (){
 
 	scene.fog = new THREE.Fog(0xcce0ff, 200, 500);
 
+	document.addEventListener('keydown', apertouButao);
 
 };
+
+
+
+var apertouButao =  function(e){
+	console.log(e.keyCode);
+	if (e.keyCode == 38){ //back
+		camera.position.z-=1;
+	}
+	if (e.keyCode == 40){ // Ahead
+		camera.position.z+=1;
+	}
+	if (e.keyCode == 39){//LEFT
+		camera.position.x+=1;
+	}if (e.keyCode == 37){//RIGHT
+		camera.position.x-=1;
+	}if (e.keyCode == 188){//Up
+		camera.position.y+=1;
+	}if (e.keyCode == 190){//Down
+		camera.position.y-=1;
+	}
+
+}
 
 var animation = function (){
 	requestAnimationFrame(animation); 
